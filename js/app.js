@@ -53,43 +53,16 @@ function zoom(){
 /*Create a variable name menuItems and assign it an array of three of your favorite items at McDonald's.
 
 Next, create a function named valueMenu that will display your favorite items in the paragraph the the id of `menu` after clicking on the showMenu paragraph.*/
+
+
 var menuItems = ["McChicken", "McDouble", "Hot Fudge Sundae"];
 
-showMenu.addEventListener("click", valueMenu);
 
-/*function valueMenu(){
-  var favItems = document.getElementById("menu");
-    for(var i = 0; i<menuItems.length; i++){
-      favItems = menuItems[i];
-      menu.innerHTML = favItems;
-      
+  function valueMenu(){
+    menu.innerHTML = menuItems.join(",");
     }
 
 
-} 
-
-function valueMenu(){
-  var favItem = document.getElementById("menu");
-  for(var i = 0; i<menuItems.length; i++){
-    favItem = menuItems[i];
-    menu.innerHTML = favItem;
-    
-  }
-}
-
-
-
-
-function valueMenu(){
- var favMenu = document.getElementById(“menu”);
- for(var i=0; i<menuItems.length; i++){
-   favMenu = menuItems[i];
-   menu.innerHTML = favMenu;
- }
-
-}
-
-*/
 
 
 
@@ -97,25 +70,21 @@ function valueMenu(){
 //5. Gin.
 /*Create a function named redFace that will change the paragraph text to red and a font size of 20px after clicking on the text.*/
 
-drink.addEventListener("click", redFace);
+
 
 function redFace(){
-  var drinkChange = document.getElementById("drink");
-  drinkChange.style.color = "red";
-  drinkChange.style.fontSize =  "20px";
-  drink.appendChild(drinkChange);
+  drink.style.color = "red";
+  drink.style.fontSize =  "20px";
+  
 }
 
 
 //6. Peanut Butter Cup Oreos
 /*Create a function `showPrice` that will add the price of `$5.55` inside the paragraph with the id `price` after hovering your mouse over the paragraph.*/
 
-price.addEventListener("mouseover", showPrice);
 
 function showPrice(){
-  var newPrice = document.getElementById("price");
-  newPrice.innerHTML = "$5.55";
-  price.appendChild(newPrice);
+  price.innerHTML = "$5.55";
 }
 
 //7. Mr. Buttons
@@ -126,9 +95,9 @@ var myQuote = "Our lives are defined by opportunities; even the ones we miss.";
 Benjamin.addEventListener("click", showQuote);
 
 function showQuote(){
-  var newQuote = document.getElementById("daisy");
+  var newQuote = document.getElementById("displayQuote");
   newQuote.innerHTML = myQuote;
-  daisy.appendChild(newQuote);
+  
 }
 
 
@@ -141,8 +110,9 @@ random.addEventListener("click", randomQuote);
 
 function randomQuote(){
   var rQuote = document.getElementById("displayQuotes");
-  rQuote.innerHTML = Math.floor(Math.random()*quotes.length);
-  displayQuotes.appendChild(rQuote);
+  nQuote = quotes[Math.floor(Math.random()*quotes.length)];
+  rQuote.innerHTML = nQuote;
+  
 }
 
 
@@ -150,3 +120,15 @@ function randomQuote(){
 //9. Unlock the Secret to Financial Freedom
 /*Create an event listener that will show and hide the message when clickig on the button.
 */
+
+showHide.addEventListener("click", showHideMessage);
+
+
+function showHideMessage(){
+  var msg = document.getElementById("showmoney");
+  if(msg.style.display === "none"){
+    msg.style.display = "inline";
+  }else{msg.style.display = "none";}
+  
+  }
+  
